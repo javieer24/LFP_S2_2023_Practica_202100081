@@ -92,3 +92,28 @@ def cargar_instrucciones_movimientos(inventario):
                 elif instruccion == "vender_producto":
                     # Separa los datos en nombre, cantidad y ubicacion
                     nombre, cantidad, ubicacion = datos.split(";")
+                    
+                     # Convierte cantidad a número entero
+                    cantidad = int(cantidad)
+                    
+                    # Agrega información sobre el movimiento a la lista lista_mov2
+                    lista_mov2.append([nombre, cantidad, ubicacion])
+                    
+                    # Verifica si el producto existe en el inventario y si la ubicación es correcta
+                    if nombre in inventario and inventario[nombre]["ubicacion"] == ubicacion:
+                        # Verifica si hay suficiente cantidad del producto en el inventario
+                        if cantidad <= inventario[nombre]["cantidad"]:
+                            # Decrementa la cantidad del producto en el inventario
+                            inventario[nombre]["cantidad"] -= cantidad
+                        else:
+                            # Si no hay suficiente cantidad, mostrar un mensaje de error
+                            print(f"Error: La cantidad a vender es mayor a la cantidad disponible en la ubicación {ubicacion}")
+                    else:
+                        # Si el producto no existe o la ubicación es incorrecta, mostrar un mensaje de error
+                        print(f"Error: El producto {nombre} no existe en la ubicación {ubicacion}")
+    
+    else:
+        # Si el archivo no existe, mostrar un mensaje de error
+        print(f"Error: El archivo {archivo_mov} no existe")
+        
+        
