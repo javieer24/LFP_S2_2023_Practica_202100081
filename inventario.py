@@ -116,4 +116,23 @@ def cargar_instrucciones_movimientos(inventario):
         # Si el archivo no existe, mostrar un mensaje de error
         print(f"Error: El archivo {archivo_mov} no existe")
         
+        # Función para crear un informe de inventario en un archivo .txt
+def crear_informe_inventario(inventario):
+    # Muestra un cuadro de diálogo para guardar el archivo .txt
+    archivo_txt = filedialog.asksaveasfilename(title="Guardar informe como...", filetypes=(("Archivos TXT", "*.txt"), ("Todos los archivos", "*.*")), defaultextension=".txt")
+    
+     # Abre el archivo en modo escritura
+    with open(archivo_txt, "w") as f:
+        # Escribe el encabezado del informe
+        f.write("informe de Inventario\n")
+        f.write("Producto\tCantidad\tPrecio Unitario\tValor Total\tUbicación\n")
+        f.write("-----------------------------------------------------------------------------------------------\n")
+        
+        # Escribe información sobre cada producto en el inventario
+        for nombre, datos in inventario.items():
+            cantidad = datos["cantidad"]
+            precio_unitario = datos["precio_unitario"]
+            valor_total = cantidad * precio_unitario
+            ubicacion = datos["ubicacion"]
+            f.write(f"{nombre}\t{cantidad}\t${precio_unitario}\t${valor_total}\t{ubicacion}\n")
         
