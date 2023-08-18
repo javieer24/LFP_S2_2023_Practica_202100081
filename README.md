@@ -20,9 +20,8 @@ Este proyecto es un programa de gestión de inventario. El código está dividid
     * Permitir al usuario crear un informe detallado del inventario en un archivo .txt para su posterior análisis y revisión.
 
 ---
-## Ejemplo de Texto
-En este ejemplo vamos a ver que Markdown no es para nada difícil, por ejemplo ahora les voy a compartir una página para trabajar Markdown en línea y que lo vimos en el laboratorio, la página es [Dillinger](https://dillinger.io).
-Además, también otra página para insertar imágenes, algo útil para describir de forma gráfica ejemplos o screenshots de sus programas (manual de usuario), la página es [Imgbb](https://imgbb.com). En esta página es mejor si se crean su cuenta y suben imágenes que nunca expiren en su cuenta, así sus documentos se mantendrán a futuro y no perderan las imágenes.
+## Estructura del programa
+El código del programa está dividido en varios archivos: menu.py, inventario.py y main.py. Cada archivo contiene funciones y código relacionado con una parte específica del programa.
 
 Por ejemplo vamos a ver como subir una imágen, vamos a utilizar un comando específico:
 ```sh
@@ -31,7 +30,7 @@ Por ejemplo vamos a ver como subir una imágen, vamos a utilizar un comando espe
 
 Puesto en la práctica algo así se vería (únicamente visible en el editor de Markdown):
 Ustedes después de entender Markdown
-![Memexd](https://i.ibb.co/NVC05Vg/imagen-2023-06-13-180933125.png)
+![Memexd](https://ibb.co/n8zLs0L)
 
 Para subir la imagen y obtener correctamente el link de ImgBB, deben de obtenerlo de la siguiente forma:
 ![ObtenerLink](https://i.ibb.co/fdZZ1Dj/imagen-2023-06-13-181103204.png)
