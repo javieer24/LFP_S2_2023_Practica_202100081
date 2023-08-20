@@ -22,9 +22,11 @@ Este proyecto es un programa de gestión de inventario. El código está dividid
 ---
 ## Estructura del programa
 El código del programa está dividido en varios archivos: menu.py, inventario.py y main.py. Cada archivo contiene funciones y código relacionado con una parte específica del programa.
+![Screenshot 2023-08-18 122631](https://github.com/javieer24/LFP_S2_2023_Practica_202100081/assets/74402782/2d387939-4b7a-40f4-9122-49973a331bdd)
 ![Archivos (Class)](https://ibb.co/JrcdRSz)
 
 ### Librerias Utilizadas
+![Screenshot 2023-08-18 120419](https://github.com/javieer24/LFP_S2_2023_Practica_202100081/assets/74402782/110140fe-68ff-473d-9701-02ea01ab6f9f)
 ![Librerias](https://ibb.co/z5ZLH89)
 La biblioteca os es una biblioteca estándar de Python que proporciona una forma de utilizar la funcionalidad dependiente del sistema operativo de manera portátil. Permite interactuar con el sistema operativo subyacente, incluyendo el acceso y manipulación del sistema de archivos, variables de entorno e incluso procesos.
 
@@ -33,6 +35,7 @@ El módulo filedialog es parte de la biblioteca tkinter, que es la interfaz est�
 En este proyecto, parece que la biblioteca os se utiliza para interactuar con el sistema operativo, mientras que el módulo filedialog se utiliza para crear cuadros de diálogo para seleccionar archivos y directorios. Esto permite al usuario cargar fácilmente el inventario inicial y las instrucciones de movimientos desde archivos externos.
 
 ### menu.py
+![Screenshot 2023-08-18 120304](https://github.com/javieer24/LFP_S2_2023_Practica_202100081/assets/74402782/725b139b-12a2-408f-9251-97c541988ace)
 Este archivo contiene la función mostrar_menu(), que se utiliza para mostrar el menú principal del programa y obtener la opción seleccionada por el usuario. La función mostrar_menu() utiliza la entrada estándar para mostrar las opciones disponibles y obtener la opción seleccionada por el usuario. La función mostrar_menu() devuelve la opción seleccionada por el usuario como una cadena.
 Las opciones del menú principal son las siguientes:
     * Cargar el inventario inicial
@@ -51,11 +54,14 @@ La función cargar_instrucciones_movimientos(inventario) se utiliza para cargar 
 La función crear_informe_inventario(inventario) se utiliza para crear un informe de inventario en un archivo .txt. Esta función muestra un cuadro de diálogo para guardar el archivo .txt y luego escribe información sobre cada producto en el inventario en el archivo.
 
 La función mostrar_inventario(inventario) se utiliza para mostrar el inventario actual en la consola. Esta función muestra el nombre, la cantidad y el precio de cada producto en el inventario.
+![Screenshot 2023-08-18 120527](https://github.com/javieer24/LFP_S2_2023_Practica_202100081/assets/74402782/bee5574b-85e4-4daa-9c4e-4105ed84eddf)
+![Screenshot 2023-08-18 120559](https://github.com/javieer24/LFP_S2_2023_Practica_202100081/assets/74402782/4a2b1199-e977-4ba8-be48-b77d26f88beb)
 
 ![Inventarió](https://ibb.co/tqVSZJR)
 ![Inventarió](https://ibb.co/bdxnvqs)
 
 ### main.py 
+![Screenshot 2023-08-18 120234](https://github.com/javieer24/LFP_S2_2023_Practica_202100081/assets/74402782/5ec44c30-95f8-4ebb-9fd8-9f01db8bebd3)
 Este archivo contiene el código principal del programa. El bucle principal del programa utiliza la función mostrar_menu() para mostrar el menú principal y obtener la opción seleccionada por el usuario. Dependiendo de la opción seleccionada por el usuario, se invoca una de las funciones del archivo inventario.py para realizar la acción correspondiente. El bucle principal continúa hasta que el usuario selecciona la opción “Salir” en el menú principal.
 ![Main](https://ibb.co/2ZJsL31)
 ```js
