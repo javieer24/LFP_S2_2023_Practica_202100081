@@ -54,7 +54,7 @@ La función mostrar_inventario(inventario) se utiliza para mostrar el inventario
 
 ![Inventarió](https://ibb.co/tqVSZJR)
 ![Inventarió](https://ibb.co/bdxnvqs)
-```js
+
 ### main.py 
 Este archivo contiene el código principal del programa. El bucle principal del programa utiliza la función mostrar_menu() para mostrar el menú principal y obtener la opción seleccionada por el usuario. Dependiendo de la opción seleccionada por el usuario, se invoca una de las funciones del archivo inventario.py para realizar la acción correspondiente. El bucle principal continúa hasta que el usuario selecciona la opción “Salir” en el menú principal.
 ![Main](https://ibb.co/2ZJsL31)
