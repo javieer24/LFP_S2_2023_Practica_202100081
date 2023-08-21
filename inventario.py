@@ -58,7 +58,7 @@ def cargar_instrucciones_movimientos(inventario):
     
     # Verifica si el archivo existe
     if os.path.exists(archivo_mov):
-        # Abre el archivo en modo lectura
+        # Abre el archivo en modo 
         with open(archivo_mov, "r") as f:
             # Lee cada línea del archivo
             for linea in f:
