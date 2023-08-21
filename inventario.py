@@ -6,7 +6,7 @@ def cargar_inventario_inicial():
     # Crea un diccionario vacío para almacenar el inventario
     inventario = {}
     
-    # Muestra un cuadro de diálogo para seleccionar el archivo .inv
+    # Mostrar un cuadro de diálogo para seleccionar el archivo .inv
     archivo_inv = filedialog.askopenfilename(title="Seleccione el archivo .inv", filetypes=(("Archivos INV", "*.inv"), ("Todos los archivos", "*.*")))
     
     # Verifica si el archivo existe
@@ -25,7 +25,7 @@ def cargar_inventario_inicial():
                 
                 # Verifica si la instrucción es crear_producto
                 if instruccion == "crear_producto":
-                    # Separa los datos en nombre, cantidad, precio_unitario y ubicacion
+                    # Separar los datos en nombre, cantidad, precio_unitario y ubicacion
                     nombre, cantidad, precio_unitario, ubicacion = datos.split(";")
                     
                     # Convierte cantidad y precio_unitario a números
@@ -37,7 +37,7 @@ def cargar_inventario_inicial():
                         # Si no existe, crear un nuevo producto en el inventario con cantidad 0
                         inventario[nombre] = {"cantidad": 0, "precio_unitario": precio_unitario, "ubicacion": ubicacion}
                     
-                    # Incrementa la cantidad del producto en el inventario
+                    # Incrementar la cantidad del producto en el inventario
                     inventario[nombre]["cantidad"] += cantidad
     
     else:
@@ -53,12 +53,12 @@ def cargar_instrucciones_movimientos(inventario):
     lista_mov = []
     lista_mov2 = []
     
-    # Muesstra un cuadro de diálogo para seleccionar el archivo .mov
+    # Muestra un cuadro de diálogo para seleccionar el archivo .mov
     archivo_mov = filedialog.askopenfilename(title="Seleccione el archivo .mov", filetypes=(("Archivos MOV", "*.mov"), ("Todos los archivos", "*.*")))
     
-    # Verifica si el archivo existe
+    # Verificar si el archivo existe
     if os.path.exists(archivo_mov):
-        # Abre el archivo en modo 
+        # Abre el archivo en modo lectura
         with open(archivo_mov, "r") as f:
             # Lee cada línea del archivo
             for linea in f:
@@ -83,17 +83,17 @@ def cargar_instrucciones_movimientos(inventario):
                     
                     # Verifica si el producto existe en el inventario y si la ubicación es correcta
                     if nombre in inventario and inventario[nombre]["ubicacion"] == ubicacion:
-                        # Incrementa la cantidad del producto en el inventario
+                        # Incrementar la cantidad del producto en el inventario
                         inventario[nombre]["cantidad"] += cantidad
                     else:
                         # Si el producto no existe o la ubicación es incorrecta, mostrar un mensaje de error
                         print(f"Error: El producto {nombre} no existe en la ubicación {ubicacion}")
                 
                 elif instruccion == "vender_producto":
-                    # Separa los datos en nombre, cantidad y ubicacion
+                    # Separar los datos en nombre, cantidad y ubicacion
                     nombre, cantidad, ubicacion = datos.split(";")
                     
-                     # Convierte cantidad a número entero
+                    # Convierte la cantidad a número entero
                     cantidad = int(cantidad)
                     
                     # Agrega información sobre el movimiento a la lista lista_mov2
@@ -101,9 +101,9 @@ def cargar_instrucciones_movimientos(inventario):
                     
                     # Verifica si el producto existe en el inventario y si la ubicación es correcta
                     if nombre in inventario and inventario[nombre]["ubicacion"] == ubicacion:
-                        # Verifica si hay suficiente cantidad del producto en el inventario
+                        # Verificar si hay suficiente cantidad del producto en el inventario
                         if cantidad <= inventario[nombre]["cantidad"]:
-                            # Decrementa la cantidad del producto en el inventario
+                            # Decrementar la cantidad del producto en el inventario
                             inventario[nombre]["cantidad"] -= cantidad
                         else:
                             # Si no hay suficiente cantidad, mostrar un mensaje de error
@@ -115,15 +115,15 @@ def cargar_instrucciones_movimientos(inventario):
     else:
         # Si el archivo no existe, mostrar un mensaje de error
         print(f"Error: El archivo {archivo_mov} no existe")
-        
-        # Función para crear un informe de inventario en un archivo .txt
+
+# Función para crear un informe de inventario en un archivo .txt
 def crear_informe_inventario(inventario):
-    # Muestra un cuadro de diálogo para guardar el archivo .txt
+    # Mostrar un cuadro de diálogo para guardar el archivo .txt
     archivo_txt = filedialog.asksaveasfilename(title="Guardar informe como...", filetypes=(("Archivos TXT", "*.txt"), ("Todos los archivos", "*.*")), defaultextension=".txt")
     
-     # Abre el archivo en modo escritura
+    # Abre el archivo en modo escritura
     with open(archivo_txt, "w") as f:
-        # Escribe el encabezado del informe
+        # Escribir el encabezado del informe
         f.write("informe de Inventario\n")
         f.write("Producto\tCantidad\tPrecio Unitario\tValor Total\tUbicación\n")
         f.write("-----------------------------------------------------------------------------------------------\n")
@@ -135,4 +135,3 @@ def crear_informe_inventario(inventario):
             valor_total = cantidad * precio_unitario
             ubicacion = datos["ubicacion"]
             f.write(f"{nombre}\t{cantidad}\t${precio_unitario}\t${valor_total}\t{ubicacion}\n")
-        
